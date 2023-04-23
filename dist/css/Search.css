@@ -1,0 +1,29 @@
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+.container .btn {
+  font-size: 20px;
+  padding: 20px;
+  background-color: gray;
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 20px;
+}
+.container .btn:hover {
+  background-color: purple;
+}
+.container .movie-search {
+  font-size: 20px;
+  padding: 20px;
+  background-color: gray;
+  width: 60%;
+}
+.container ::-moz-placeholder {
+  color: white;
+  opacity: 0.7;
+}
+.container ::placeholder {
+  color: white;
+  opacity: 0.7;
+}/*# sourceMappingURL=Search.css.map */

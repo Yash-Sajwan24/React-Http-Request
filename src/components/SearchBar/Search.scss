@@ -1,0 +1,32 @@
+@mixin styling() {
+    font-size: 20px;
+    padding: 20px;
+    background-color: gray;
+}
+
+.container{
+    margin-top: 50px;
+    text-align: center;
+    .btn{
+        @include styling();
+        margin-left: 20px;
+        cursor: pointer;
+        padding: 20px;
+
+        &:hover{
+            background-color: purple;
+        }
+    }
+
+    .movie-search{
+        @include styling();
+        width: 60%;
+    
+    }
+    ::placeholder{
+        color: white;
+        opacity: 0.7;
+    }
+
+}
+
