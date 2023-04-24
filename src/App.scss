@@ -10,3 +10,13 @@ body{
     color: white;
     font-weight: 600;
 }
+
+.movcontainer{
+    background-color: gray;
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

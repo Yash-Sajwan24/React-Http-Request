@@ -5,11 +5,10 @@ import { Fragment } from 'react';
 const Movies = (props) => {
     return (
         <Fragment>
-        <div className='movcontainer card'>
+       
             {props.alldata.map((movie) => {
-                return <Movie title= {movie.title} details={movie.details} date= {movie.date} />;
+                return <Movie title= {movie.title} details={movie.details} date= {movie.date} image = {movie.image} />;
             })}           
-        </div>
         </Fragment>
        
     )
