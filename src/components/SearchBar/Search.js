@@ -4,12 +4,14 @@ import { useState } from "react";
 const Search = (props) => {
   const [movie, setMovie] = useState("");
 
-  const onClickHandler = () => {
+  const onClickHandler = (e) => {
+    e.preventDefault();
     props.item(movie);
   };
 
   return (
     <div className="container">
+      <form onSubmit={onClickHandler}>
       <input
         value={movie}
         onChange={(e) => {
@@ -19,9 +21,11 @@ const Search = (props) => {
         type="text"
         placeholder="Enter the name of the movie"
       ></input>
-      <button onClick={onClickHandler} className="btn card">
+      <button type="submit" className="btn card">
         Search
       </button>
+      </form>
+      
     </div>
   );
 };

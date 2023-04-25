@@ -22,12 +22,13 @@ const App = () => {
         throw new Error(true);
       }
     const data = await response.json();
+    console.log(data);
     
       const transformedResults = data.Search.map((data, i) => {
         return {
           title: data.Title,
           id: i,
-          details: data.imdbID,  
+          details: data.Type,  
           date: data.Year,
           image: data.Poster, 
         };

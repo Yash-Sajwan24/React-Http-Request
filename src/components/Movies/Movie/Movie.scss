@@ -14,22 +14,26 @@
         
         font-size: 10px;
         overflow-wrap: anywhere;
-        color: black;
+        // color: black;
         font-weight: 700;
       
         position: relative;
         border-radius: 12px;
         overflow: hidden;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-      
+
+        .title{
+          margin: 10px;
+        }
+
         .details {
           font-weight: 400;
-          margin: 5px;
+          margin: 10px;
         }
       
         .date {
+          margin: 10px;
           font-size: 20px;
-          color: black;
           font-weight: 600;
         }
         img {
@@ -37,6 +41,10 @@
           width: 100%;
           border-radius: 12px;
         }
-      }
-      
+      }  
+}
+.container2{
+  height: 600px;
+  width: 600px;
+  background-color: yellow;
 }

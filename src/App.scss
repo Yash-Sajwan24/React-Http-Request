@@ -16,7 +16,12 @@ body{
     width: 80%;
     margin: 50px auto;
     display: flex;
-    padding: 20px;
+    padding: 10px 5px;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    p{
+        font-size: 30px;
+        
+    }
 }

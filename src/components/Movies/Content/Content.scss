@@ -1,0 +1,28 @@
+.selected_movie{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+
+    img{
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    button{
+        background-color: purple;
+        margin: 20px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 5px solid black;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+
+        &:hover{
+            background-color: lightcoral;
+        }
+    }
+
+}
