@@ -44,16 +44,25 @@ const App = () => {
     fetchMovies(movie);
   };
 
+  let content = <p>Found no movies.</p>;
+
+  if(allMovies.length > 0){
+    content =  <Movies alldata={allMovies} />
+  }
+
+  if(error){
+    content = <p>Something went wrong.</p>
+  }
+
+  if(loading){
+    content = <p>Loading....</p>;
+  }
+
 
   return (
     <Fragment>
       <Search item={data} />
-      <div className='movcontainer card'>
-      {!loading && !error && allMovies.length > 0 && <Movies alldata={allMovies} />}
-      {!loading && !error && allMovies.length === 0  && <p>No movies found.</p> }
-      {!loading && error && <p>Something went wrong.</p>}
-      {loading && <p>Loading....</p>}
-      </div>
+      <div className='movcontainer card'>{content}</div>
     </Fragment>
   );
 };
