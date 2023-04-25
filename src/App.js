@@ -10,23 +10,33 @@ const API_URL = 'https://www.omdbapi.com?apikey=3485b64c';
 const App = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [error, setError] = useState(false);
 
 
   async function fetchMovies(movie) {
     setLoading(true);
-    const response = await fetch(`${API_URL}&s=${movie}`);
+    setError(false);
+    try{
+      const response = await fetch(`${API_URL}&s=${movie}`);
+      if(!response.ok){
+        throw new Error(true);
+      }
     const data = await response.json();
-    const transformedResults = data.Search.map((data, i) => {
-      return {
-        title: data.Title,
-        id: i,
-        details: data.imdbID,  
-        date: data.Year,
-        image: data.Poster, 
-      };
-    });
-    setAllMovies(transformedResults);
+    
+      const transformedResults = data.Search.map((data, i) => {
+        return {
+          title: data.Title,
+          id: i,
+          details: data.imdbID,  
+          date: data.Year,
+          image: data.Poster, 
+        };
+      });
+      setAllMovies(transformedResults);
+    }catch(error){
+        setError(error);
+    }
+  
     setLoading(false);
   }
 
@@ -34,12 +44,14 @@ const App = () => {
     fetchMovies(movie);
   };
 
+
   return (
     <Fragment>
       <Search item={data} />
       <div className='movcontainer card'>
-      {!loading && allMovies.length > 0 && <Movies alldata={allMovies} />}
-      {!loading && allMovies.length === 0  && <p>No data found.</p> }
+      {!loading && !error && allMovies.length > 0 && <Movies alldata={allMovies} />}
+      {!loading && !error && allMovies.length === 0  && <p>No movies found.</p> }
+      {!loading && error && <p>Something went wrong.</p>}
       {loading && <p>Loading....</p>}
       </div>
     </Fragment>
